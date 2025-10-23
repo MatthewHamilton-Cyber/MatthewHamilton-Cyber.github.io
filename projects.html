@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Matthew Hamilton</title>
+  <meta name="description" content="Projects by Matthew Hamilton" />
+  <style>
+    :root{--navy:#0b1f3a;--text:#ffffff;--muted:#d9e2f1;--accent:#ffd60a;--maxw:980px;--radius:12px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 18px 60px}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(11,31,58,.95);border-bottom:2px solid rgba(255,255,255,.08);backdrop-filter:blur(6px)}
+    .nav-container{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:12px 10px}
+    .nav-container a{color:var(--text);font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:6px 10px;border-radius:6px;transition:.2s}
+    .nav-container a:hover{background:var(--accent);color:var(--navy);text-decoration:none}
+
+    header{border-bottom:2px solid rgba(255,255,255,.08);padding-bottom:14px;margin-bottom:22px}
+    h1{margin:0 0 6px;font-size:1.8rem}
+    .sub{margin:0;color:var(--muted)}
+
+    section{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;margin:16px 0}
+    h2{margin:0 0 10px;font-size:1.15rem}
+
+    .grid{display:grid;gap:14px}
+    @media(min-width:780px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px;background:rgba(255,255,255,.03)}
+    .title{font-weight:700}
+    .meta{color:var(--muted);font-size:.92rem;margin-bottom:6px}
+    .stack{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px}
+    .pill{font-size:.8rem;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.12);color:var(--muted)}
+
+    footer{text-align:center;margin-top:30px;color:var(--muted);font-size:.95rem;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header>
+      <h1>Projects</h1>
+      <p class="sub">Selected cybersecurity tools, research, and demos.</p>
+    </header>
+
+    <section>
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <!-- Project card -->
+        <article class="card">
+          <div class="title">ThreatIntel Analyzer</div>
+          <div class="meta">Mapping TTPs to MITRE ATT&CK for quick briefings</div>
+          <p>Parses reports, extracts technique IDs, and renders matrices. Great for short intel briefs.</p>
+          <div class="stack">
+            <span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">MITRE API</span>
+          </div>
+          <p><a href="#" target="_blank" rel="noopener">GitHub</a> · <a href="#" target="_blank" rel="noopener">Demo</a></p>
+        </article>
+
+        <article class="card">
+          <div class="title">MailSec Testbed</div>
+          <div class="meta">Local SMTP sandbox to learn delivery & headers</div>
+          <p>Test environment for phishing simulations and header analysis (no outbound relay).</p>
+          <div class="stack">
+            <span class="pill">Docker</span><span class="pill">Python</span>
+          </div>
+          <p><a href="#" target="_blank" rel="noopener">GitHub</a></p>
+        </article>
+
+        <article class="card">
+          <div class="title">ATT&CK Notes</div>
+          <div class="meta">Curated technique snippets with detection tips</div>
+          <p>Short write-ups on technique IDs, common pitfalls, and detection ideas.</p>
+          <div class="stack">
+            <span class="pill">Detections</span><span class="pill">Sigma</span>
+          </div>
+          <p><a href="#" target="_blank" rel="noopener">GitHub</a></p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      🔗 <a href="https://www.linkedin.com/in/matthew-hamilton-cyber?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </footer>
+  </div>
+</body>
+</html>
