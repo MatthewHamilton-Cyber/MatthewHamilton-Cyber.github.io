@@ -7,10 +7,10 @@
   <meta name="description" content="Matthew Hamilton — Cyber Security Professional" />
   <style>
     :root{
-      --navy:#0b1f3a;      /* deep navy */
-      --text:#ffffff;      /* white */
-      --muted:#d9e2f1;     /* soft white/blue for secondary text */
-      --accent:#ffd60a;    /* yellow highlight */
+      --navy:#0b1f3a;
+      --text:#ffffff;
+      --muted:#d9e2f1;
+      --accent:#ffd60a;
       --maxw: 980px;
       --radius: 12px;
     }
@@ -36,23 +36,23 @@
       padding-bottom:18px; margin-bottom:22px;
       gap:20px;
     }
-    .info{flex:1 1 52%}
+    .info{flex:1 1 55%}
     h1{margin:0 0 6px; font-size:2rem}
     .tagline{margin:0; color:var(--muted)}
 
     /* Iframe badge */
     .badge{
-      flex:1 1 42%;
+      flex:1 1 40%;
       background: rgba(255,255,255,.05);
       border:2px dashed rgba(255,214,10,.6);
       border-radius: var(--radius);
-      padding:8px;
-      min-width:280px;
+      padding:6px;
+      min-width:260px;
     }
     .badge iframe{
       display:block;
       width:100%;
-      height:300px;   /* increased to avoid scrolling */
+      height:100px; /* shorter */
       border:none;
       border-radius:8px;
       background:#000;
@@ -67,29 +67,45 @@
     }
     h2{margin:0 0 10px; font-size:1.15rem}
 
-    /* Experience grouping */
-    .company{
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:10px;
-      padding:14px;
-      margin:12px 0;
-      background: rgba(255,255,255,.03);
+    /* Timeline */
+    .timeline{
+      position:relative;
+      margin-left:20px;
+      padding-left:20px;
+      border-left:3px solid var(--accent);
     }
-    .company h3{
-      margin:0 0 8px; font-size:1.05rem;
-      display:flex; align-items:center; gap:8px;
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:-8px;
+      top:0;
+      bottom:0;
+      width:15px;
+      background:linear-gradient(var(--accent),transparent);
+      opacity:0.15;
+      border-radius:8px;
     }
-    .company h3 .dot{
-      width:10px; height:10px; border-radius:50%;
-      background:var(--accent); display:inline-block;
+    .entry{
+      position:relative;
+      margin-bottom:22px;
     }
-    .roles{margin:0; padding-left:16px; list-style:none}
-    .roles li{
-      margin:8px 0; padding-left:0;
+    .entry::before{
+      content:"";
+      position:absolute;
+      left:-29px;
+      top:8px;
+      width:12px; height:12px;
+      border-radius:50%;
+      background:var(--accent);
     }
-    .title{font-weight:700}
-    .dates{color:var(--muted)}
-    .sep{opacity:.35}
+    .entry h3{
+      margin:0;
+      font-size:1.05rem;
+      color:var(--accent);
+    }
+    .entry .role{font-weight:700; display:block}
+    .entry .dates{color:var(--muted); font-size:.9rem}
+    .entry:last-child{margin-bottom:0}
 
     footer{
       text-align:center;
@@ -101,7 +117,7 @@
     }
 
     @media (max-width:720px){
-      .badge iframe{height:340px}
+      .badge iframe{height:120px}
     }
   </style>
 </head>
@@ -131,58 +147,59 @@
 
       <section>
         <h2>Experience</h2>
+        <div class="timeline">
 
-        <!-- NCC Group -->
-        <div class="company">
-          <h3><span class="dot" aria-hidden="true"></span>NCC Group</h3>
-          <ul class="roles">
-            <li>
-              <span class="title">Principal Cyber Security Analyst</span>
-              <span class="sep">·</span>
-              <span class="dates">July 2025 – Present</span>
-            </li>
-            <li>
-              <span class="title">Senior Cyber Security Analyst</span>
-              <span class="sep">·</span>
-              <span class="dates">January 2024 – July 2025</span>
-            </li>
-            <li>
-              <span class="title">Cyber Security Analyst (R2)</span>
-              <span class="sep">·</span>
-              <span class="dates">September 2023 – January 2024</span>
-            </li>
-          </ul>
+          <div class="entry">
+            <h3>NCC Group</h3>
+            <span class="role">Principal Cyber Security Analyst</span>
+            <span class="dates">July 2025 – Present</span>
+            <span class="role">Senior Cyber Security Analyst</span>
+            <span class="dates">January 2024 – July 2025</span>
+            <span class="role">Cyber Security Analyst (R2)</span>
+            <span class="dates">September 2023 – January 2024</span>
+          </div>
+
+          <div class="entry">
+            <h3>Adarma Security</h3>
+            <span class="role">Senior SOC Analyst</span>
+            <span class="dates">February 2022 – September 2023</span>
+            <span class="role">SOC Analyst</span>
+            <span class="dates">January 2021 – February 2022</span>
+          </div>
+
+          <div class="entry">
+            <h3>Capito</h3>
+            <span class="role">Information Technology Engineer</span>
+            <span class="dates">June 2020 – December 2020</span>
+          </div>
         </div>
+      </section>
 
-        <!-- Adarma Security -->
-        <div class="company">
-          <h3><span class="dot" aria-hidden="true"></span>Adarma Security</h3>
-          <ul class="roles">
-            <li>
-              <span class="title">Senior SOC Analyst</span>
-              <span class="sep">·</span>
-              <span class="dates">February 2022 – September 2023</span>
-            </li>
-            <li>
-              <span class="title">SOC Analyst</span>
-              <span class="sep">·</span>
-              <span class="dates">January 2021 – February 2022</span>
-            </li>
-          </ul>
+      <section>
+        <h2>Education</h2>
+        <div class="timeline">
+
+          <div class="entry">
+            <h3>Masters of Science</h3>
+            <span class="role">Advanced Cyber Security and Digital Forensics</span>
+          </div>
+
+          <div class="entry">
+            <h3>Bachelor of Engineering</h3>
+            <span class="role">Cyber Security and Digital Forensics</span>
+          </div>
+
+          <div class="entry">
+            <h3>Higher National Certificate (HNC)</h3>
+            <span class="role">Computing Technical Support</span>
+          </div>
+
+          <div class="entry">
+            <h3>Bachelor of Arts (Pending)</h3>
+            <span class="role">Business Management — Expected Graduation: October 2028</span>
+          </div>
+
         </div>
-
-        <!-- Capito -->
-        <div class="company">
-          <h3><span class="dot" aria-hidden="true"></span>Capito</h3>
-          <ul class="roles">
-            <li>
-              <span class="title">Information Technology Engineer</span>
-              <span class="sep">·</span>
-              <span class="dates">June 2020 – December 2020</span>
-            </li>
-          </ul>
-        </div>
-
       </section>
     </main>
 
