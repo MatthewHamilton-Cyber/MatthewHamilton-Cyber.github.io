@@ -1,7 +1,120 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> Hello this is title </title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew Hamilton — Cyber Security</title>
+  <meta name="description" content="Matthew Hamilton — Cyber Security" />
+  <style>
+    :root{
+      --navy:#0b1f3a;      /* deep navy */
+      --text:#ffffff;      /* white */
+      --muted:#d9e2f1;     /* soft white/blue for secondary text */
+      --accent:#ffd60a;    /* yellow highlight */
+      --maxw: 920px;
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 60px}
+    header{
+      border-bottom:2px solid rgba(255,255,255,.08);
+      padding-bottom:18px; margin-bottom:22px;
+    }
+    h1{margin:0 0 6px; font-size:2rem}
+    .tagline{margin:0; color:var(--muted)}
+    .chip{
+      display:inline-block; margin-top:10px; padding:6px 10px; border-radius:999px;
+      background: rgba(255,214,10,.12); color: var(--accent); font-weight:600; border:1px solid rgba(255,214,10,.35);
+    }
+    section{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding:18px;
+      margin:16px 0;
+    }
+    h2{margin:0 0 10px; font-size:1.15rem}
+    .btn{
+      display:inline-block; padding:10px 14px; border-radius:10px; border:2px solid var(--accent);
+      color:var(--navy); background:var(--accent); font-weight:700; text-decoration:none;
+    }
+    .btn.ghost{
+      background:transparent; color:var(--accent); border-color:var(--accent);
+    }
+    /* iframe area */
+    .embed{
+      background: rgba(255,214,10,.06);
+      border:2px dashed rgba(255,214,10,.6);
+      border-radius: var(--radius);
+      padding:10px;
+    }
+    .embed iframe{
+      width:100%; height:360px; border:0; border-radius:8px; background:#000;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Matthew Hamilton</h1>
+      <p class="tagline">Cyber Security</p>
+      <span class="chip">Navy · White · <strong>Yellow</strong> highlights</span>
+    </header>
+
+    <main>
+      <section>
+        <h2>About</h2>
+        <p>
+          Short intro goes here. One or two sentences about your focus areas, e.g.
+          threat intelligence, adversary TTPs, secure tooling, and hands-on research.
+        </p>
+        <p>
+          <a class="btn" href="#">Primary Action</a>
+          <a class="btn ghost" href="#">Secondary</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Projects (placeholder)</h2>
+        <ul>
+          <li><span style="color:var(--accent)">•</span> Project 1 — one-line description</li>
+          <li><span style="color:var(--accent)">•</span> Project 2 — one-line description</li>
+        </ul>
+      </section>
+
+      <section class="embed">
+        <h2 style="margin-top:0">Embedded Content (iframe)</h2>
+        <!-- Replace the src with whatever you want to embed (must allow embedding) -->
+        <!-- Example: GitHub Pages site, a dashboard, or a video that permits iframes -->
+        <iframe
+          title="Embedded content"
+          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4055344" style='border:none;'
+    
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+        <p style="margin:.6rem 0 0; color:var(--muted); font-size:.95rem">
+          Tip: some sites block embeds. If your content doesn’t appear, it may have an
+          <code style="color:var(--accent)">X-Frame-Options</code> or CSP restriction.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          🔗 <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
 </html>
