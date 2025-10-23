@@ -14,7 +14,7 @@
       --maxw:980px;
       --radius:12px;
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;scroll-behavior:smooth;}
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -26,7 +26,40 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 18px 60px}
 
-    /* Header layout */
+    /* 🔝 Top navigation bar */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(11,31,58,0.95);
+      border-bottom:2px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(6px);
+    }
+    .nav-container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:16px;
+      padding:12px 10px;
+    }
+    .nav-container a{
+      color:var(--text);
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+      padding:6px 10px;
+      border-radius:6px;
+      transition:all 0.2s ease;
+    }
+    .nav-container a:hover{
+      background:var(--accent);
+      color:var(--navy);
+      text-decoration:none;
+    }
+
+    /* Header */
     header{
       display:flex;
       align-items:center;
@@ -41,7 +74,7 @@
     h1{margin:0 0 6px;font-size:2rem}
     .tagline{margin:0;color:var(--muted)}
 
-    /* Responsive TryHackMe badge */
+    /* TryHackMe badge */
     .badge{flex:0 0 auto}
     .badge iframe{
       display:block;
@@ -53,10 +86,7 @@
       margin:0 auto;
     }
     @media(min-width:900px){
-      .badge iframe{
-        width:320px;
-        height:110px; /* prevents scrollbars on desktop */
-      }
+      .badge iframe{width:320px;height:110px;}
     }
     @media(max-width:420px){
       header{flex-wrap:wrap}
@@ -74,7 +104,7 @@
     }
     h2{margin:0 0 10px;font-size:1.15rem}
 
-    /* Timeline (dots only, no vertical line) */
+    /* Timeline (dots only) */
     .timeline{margin:0;padding:0}
     .entry{
       position:relative;
@@ -106,13 +136,23 @@
   </style>
 </head>
 <body>
+  <!-- 🔝 Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
   <div class="wrap">
-    <header>
+    <!-- 🏠 HOME -->
+    <header id="home">
       <div class="info">
         <h1>Matthew Hamilton</h1>
         <p class="tagline">Cyber Security Professional</p>
       </div>
-
       <div class="badge" aria-label="TryHackMe public profile">
         <iframe
           title="TryHackMe Badge"
