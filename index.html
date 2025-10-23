@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matthew Hamilton — Cyber Security</title>
-  <meta name="description" content="Matthew Hamilton — Cyber Security" />
+  <title>Matthew Hamilton — Cyber Security Professional</title>
+  <meta name="description" content="Matthew Hamilton — Cyber Security Professional" />
   <style>
     :root{
       --navy:#0b1f3a;      /* deep navy */
       --text:#ffffff;      /* white */
       --muted:#d9e2f1;     /* soft white/blue for secondary text */
       --accent:#ffd60a;    /* yellow highlight */
-      --maxw: 920px;
+      --maxw: 980px;
       --radius: 12px;
     }
     *{box-sizing:border-box}
@@ -25,9 +25,19 @@
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 60px}
+
+    /* Header layout */
     header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
       border-bottom:2px solid rgba(255,255,255,.08);
       padding-bottom:18px; margin-bottom:22px;
+      gap:20px;
+    }
+    .info{
+      flex:1 1 60%;
     }
     h1{margin:0 0 6px; font-size:2rem}
     .tagline{margin:0; color:var(--muted)}
@@ -35,6 +45,24 @@
       display:inline-block; margin-top:10px; padding:6px 10px; border-radius:999px;
       background: rgba(255,214,10,.12); color: var(--accent); font-weight:600; border:1px solid rgba(255,214,10,.35);
     }
+
+    /* Iframe badge */
+    .badge{
+      flex:0 0 auto;
+      background: rgba(255,255,255,.05);
+      border:2px dashed rgba(255,214,10,.6);
+      border-radius: var(--radius);
+      padding:6px;
+    }
+    .badge iframe{
+      display:block;
+      width:260px;
+      height:100px;
+      border:none;
+      border-radius:8px;
+      background:#000;
+    }
+
     section{
       background: rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
@@ -43,68 +71,59 @@
       margin:16px 0;
     }
     h2{margin:0 0 10px; font-size:1.15rem}
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:10px; border:2px solid var(--accent);
-      color:var(--navy); background:var(--accent); font-weight:700; text-decoration:none;
-    }
-    .btn.ghost{
-      background:transparent; color:var(--accent); border-color:var(--accent);
-    }
-    /* iframe area */
-    .embed{
-      background: rgba(255,214,10,.06);
-      border:2px dashed rgba(255,214,10,.6);
-      border-radius: var(--radius);
-      padding:10px;
-    }
-    .embed iframe{
-      width:100%; height:360px; border:0; border-radius:8px; background:#000;
+
+    footer{
+      text-align:center;
+      margin-top:30px;
+      color:var(--muted);
+      font-size:.95rem;
+      border-top:1px solid rgba(255,255,255,.1);
+      padding-top:14px;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Matthew Hamilton</h1>
-      <p class="tagline">Cyber Security</p>
+      <div class="info">
+        <h1>Matthew Hamilton</h1>
+        <p class="tagline">Cyber Security Professional</p>
+        <span class="chip">Navy · White · <strong>Yellow</strong> highlights</span>
+      </div>
+
+      <div class="badge">
+        <!-- TryHackMe public profile badge -->
+        <iframe
+          title="TryHackMe Badge"
+          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4055344"
+          style="border:none;">
+        </iframe>
+      </div>
     </header>
 
     <main>
       <section>
         <h2>About</h2>
         <p>
-          Short intro
+          This section can introduce who you are — your focus areas, tools, and what you enjoy most in cybersecurity.
+          You can expand this later with your current role, areas of expertise, and professional goals.
         </p>
       </section>
 
       <section>
         <h2>Projects (placeholder)</h2>
         <ul>
-          <li><span style="color:var(--accent)">•</span> Project 1 — one-line description</li>
-          <li><span style="color:var(--accent)">•</span> Project 2 — one-line description</li>
+          <li><span style="color:var(--accent)">•</span> Project 1 — brief description</li>
+          <li><span style="color:var(--accent)">•</span> Project 2 — brief description</li>
         </ul>
       </section>
-
-      <section class="embed">
-        <h2 style="margin-top:0">Embedded Content (iframe)</h2>
-        <iframe
-          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4055344" style='border:none;'
-    allowfullscreen
-          loading="lazy">
-        </iframe>
-        <p style="margin:.6rem 0 0; color:var(--muted); font-size:.95rem">
-          Tip: some sites block embeds. If your content doesn’t appear, it may have an
-          <code style="color:var(--accent)">X-Frame-Options</code> or CSP restriction.
-        </p>
-      </section>
-
-      <section>
-        <h2>Contact</h2>
-        <p>
-          🔗 <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
-      </section>
     </main>
+
+    <footer>
+      🔗 <a href="https://www.linkedin.com/in/matthew-hamilton-cyber?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener">
+        Connect on LinkedIn
+      </a>
+    </footer>
   </div>
 </body>
 </html>
