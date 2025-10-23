@@ -26,7 +26,7 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 18px 60px}
 
-    /* Header layout */
+    /* Header */
     header{
       display:flex;
       flex-wrap:wrap;
@@ -40,22 +40,23 @@
     h1{margin:0 0 6px; font-size:2rem}
     .tagline{margin:0; color:var(--muted)}
 
-    /* Iframe badge */
+    /* Iframe badge (reduced by 10px each way) */
     .badge{
       flex:1 1 40%;
       background: rgba(255,255,255,.05);
       border:2px dashed rgba(255,214,10,.6);
       border-radius: var(--radius);
-      padding:6px;
+      padding:5px;                /* slightly tighter */
       min-width:260px;
     }
     .badge iframe{
       display:block;
-      width:100%;
-      height:100px; /* shorter */
+      width:calc(100% - 10px);    /* 10px narrower */
+      height:90px;                /* 10px shorter than 100px */
       border:none;
       border-radius:8px;
       background:#000;
+      margin:0 auto;              /* center the iframe inside the badge box */
     }
 
     section{
@@ -67,33 +68,19 @@
     }
     h2{margin:0 0 10px; font-size:1.15rem}
 
-    /* Timeline */
-    .timeline{
-      position:relative;
-      margin-left:20px;
-      padding-left:20px;
-      border-left:3px solid var(--accent);
-    }
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left:-8px;
-      top:0;
-      bottom:0;
-      width:15px;
-      background:linear-gradient(var(--accent),transparent);
-      opacity:0.15;
-      border-radius:8px;
-    }
+    /* Timeline WITHOUT vertical line (dots only) */
+    .timeline{margin:0; padding:0}
     .entry{
       position:relative;
-      margin-bottom:22px;
+      margin:0 0 18px 0;
+      padding-left:22px;          /* space for the dot */
     }
+    .entry:last-child{margin-bottom:0}
     .entry::before{
       content:"";
       position:absolute;
-      left:-29px;
-      top:8px;
+      left:0;                     /* sits inside the padding */
+      top:7px;
       width:12px; height:12px;
       border-radius:50%;
       background:var(--accent);
@@ -103,9 +90,8 @@
       font-size:1.05rem;
       color:var(--accent);
     }
-    .entry .role{font-weight:700; display:block}
-    .entry .dates{color:var(--muted); font-size:.9rem}
-    .entry:last-child{margin-bottom:0}
+    .role{font-weight:700; display:block}
+    .dates{color:var(--muted); font-size:.9rem}
 
     footer{
       text-align:center;
@@ -117,7 +103,7 @@
     }
 
     @media (max-width:720px){
-      .badge iframe{height:120px}
+      .badge iframe{height:100px; width:calc(100% - 10px)}
     }
   </style>
 </head>
@@ -140,15 +126,12 @@
     <main>
       <section>
         <h2>About</h2>
-        <p>
-          I am a Principal Cyber Security Analyst at NCC Group and this is my portfolio.
-        </p>
+        <p>I am a Principal Cyber Security Analyst at NCC Group and this is my portfolio.</p>
       </section>
 
       <section>
         <h2>Experience</h2>
         <div class="timeline">
-
           <div class="entry">
             <h3>NCC Group</h3>
             <span class="role">Principal Cyber Security Analyst</span>
@@ -178,28 +161,53 @@
       <section>
         <h2>Education</h2>
         <div class="timeline">
-
           <div class="entry">
             <h3>Masters of Science</h3>
             <span class="role">Advanced Cyber Security and Digital Forensics</span>
           </div>
-
           <div class="entry">
             <h3>Bachelor of Engineering</h3>
             <span class="role">Cyber Security and Digital Forensics</span>
           </div>
-
           <div class="entry">
             <h3>Higher National Certificate (HNC)</h3>
             <span class="role">Computing Technical Support</span>
           </div>
-
           <div class="entry">
             <h3>Bachelor of Arts (Pending)</h3>
             <span class="role">Business Management — Expected Graduation: October 2028</span>
           </div>
-
         </div>
+      </section>
+
+      <section>
+        <h2>Current Certifications</h2>
+        <div class="timeline">
+          <div class="entry">
+            <h3>Splunk</h3>
+            <span class="role">Splunk Enterprise Security Certified Admin</span>
+          </div>
+          <div class="entry">
+            <h3>TryHackMe</h3>
+            <span class="role">Security Analyst Level 1</span>
+          </div>
+          <div class="entry">
+            <h3>TryHackMe</h3>
+            <span class="role">Jr Penetration Tester</span>
+          </div>
+          <div class="entry">
+            <h3>Python Institute</h3>
+            <span class="role">Certified Entry-Level Python Programmer</span>
+          </div>
+          <div class="entry">
+            <h3>Microsoft</h3>
+            <span class="role">MTA — Windows Operating System Fundamentals</span>
+          </div>
+        </div>
+        <p style="margin-top:12px">
+          🏅 View all badges on
+          <a href="https://www.credly.com/users/matthew-hamilton.d62e6e82/badges#credly" target="_blank" rel="noopener">Credly</a>.
+        </p>
       </section>
     </main>
 
